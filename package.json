@@ -2,10 +2,24 @@
   "name": "github_users",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "*.js": [
+      "prettier --write -c",
+      "eslint --fix",
+      "stylelint"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "cy": "cypress run",
     "cy:open": "cypress open",
-
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,9 +52,12 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-root-import": "^6.5.0",
     "cypress": "^4.12.0",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -52,6 +69,10 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "git-branch-is": "^3.1.0",
+    "husky": "^4.2.5",
+    "imagemin-lint-staged": "^0.4.0",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "stylelint": "^13.6.1",
     "stylelint-config-recommended": "^3.0.0",
