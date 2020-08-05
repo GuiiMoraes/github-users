@@ -36,6 +36,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react/prefer-stateless-function': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
