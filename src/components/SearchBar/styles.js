@@ -8,7 +8,7 @@ export default styled.div`
   width: calc(100% - 20px);
   height: 32px;
 
-  padding: 10px;
+  padding: 0 10px;
   margin-top: 10px;
 
   border-radius: 6px;
@@ -16,7 +16,11 @@ export default styled.div`
 
   background-color: #fafbfc;
 
+  transition: border 0.2s, color 0.2s;
+
   input {
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     border: none;
     color: #586069;

@@ -28,10 +28,11 @@ function Dashboard() {
     });
 
     try {
+      setUser('');
+
       const response = await getUsers(user);
 
       setUserData([...userData, response.data]);
-      setUser('');
 
       setLoadingState({
         loading: false,

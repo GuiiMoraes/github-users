@@ -66,4 +66,45 @@ export default styled.div`
       width: 100%;
     }
   }
+  @media (min-width: 768px), (min-width: 683px) and (min-height: 664px) {
+    justify-content: flex-start;
+
+    div.card {
+      width: calc(100vh / 3.6);
+
+      img {
+        width: 70px;
+        height: 70px;
+      }
+
+      strong {
+        font-size: 1rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (min-width: 1400px), (min-width: 960px) and (min-height: 976px) {
+    justify-content: flex-start;
+
+    div.card {
+      width: calc(100vh / 3.7);
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      strong {
+        font-size: 1.1rem;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
 `;
