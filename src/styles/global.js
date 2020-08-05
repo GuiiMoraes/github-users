@@ -6,7 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', 'Roboto', sans-serif;
   }
 
   *:focus {
@@ -19,7 +19,7 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased !important;
-    background-color: #fff;
+    background-color: #F1F1F1;
   }
 
   button {

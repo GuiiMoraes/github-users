@@ -1,58 +1,54 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable no-useless-constructor */
 import React from 'react';
-
-import Container from './styles';
+import { FiAlertCircle } from 'react-icons/fi';
 
 import Loading from '../loadingIcon';
+import Container from './styles';
 
 class Content extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    if (this.props?.loading.init) {
+    const { userData, loading } = this.props;
+
+    if (loading.init) {
       return (
         <Container>
-          <h1>Users</h1>
-          <p>Insert your user</p>
+          <div className="content">
+            <p>Use text input to search by an user.</p>
+          </div>
         </Container>
       );
     }
 
-    if (this.props?.loading.loading) {
+    if (loading.loading) {
       return (
         <Container>
-          <h1>Users</h1>
-          <Loading />
+          <div className="content">
+            <Loading />
+          </div>
         </Container>
       );
     }
 
-    if (this.props?.loading.error) {
+    if (loading.error) {
       return (
         <Container>
-          <h1>Users</h1>
-          <p>{this.props?.loading.errorMessage || 'Unexpected error'}</p>
+          <div className="content">
+            <FiAlertCircle size={50} color="#333333" />
+            <p>{loading.errorMessage || 'Unexpected error'}</p>
+          </div>
         </Container>
       );
     }
 
     return (
       <Container>
-        <h1>Users</h1>
-        {this.props?.userData.map(user => (
-          <>
-            <img
-              src={this.props?.userData.avatar_url}
-              alt={`avatar of ${this.props?.userData.name}`}
-            />
-            <strong key={this.props?.userData.id}>
-              {this.props?.userData.name}
-            </strong>
-            <small>{this.props?.userData.bio}</small>
-          </>
+        {userData?.map(user => (
+          <div className="card" key={user.id}>
+            <img src={user.avatar_url} alt={`avatar of ${user.name}`} />
+            <strong>{user.name}</strong>
+            <small>{user.login}</small>
+            <span>{user.bio}</span>
+          </div>
         ))}
       </Container>
     );

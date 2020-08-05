@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Button from '../components/Button';
 import Content from '../components/Content';
+import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import getUsers from '../services/api.services';
 import Container from './styles';
@@ -31,6 +31,7 @@ function Dashboard() {
       const response = await getUsers(user);
 
       setUserData([...userData, response.data]);
+      setUser('');
 
       setLoadingState({
         loading: false,
@@ -39,19 +40,23 @@ function Dashboard() {
       setLoadingState({
         loading: false,
         error: true,
-        errorMessage: 'Occurred an error on search, please try again',
+        errorMessage: 'Occurred an error on search, please try again.',
       });
     }
   };
 
   return (
-    <Container>
-      <span>
-        <SearchBar user={user} handleChangeUser={handleChangeUser} />
-        <Button handleSearch={handleSearch} />
-      </span>
-      <Content userData={userData} loading={loadingState} />
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <SearchBar
+          user={user}
+          handleChangeUser={handleChangeUser}
+          handleSearch={handleSearch}
+        />
+        <Content userData={userData} loading={loadingState} />
+      </Container>
+    </>
   );
 }
 

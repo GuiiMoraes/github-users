@@ -1,10 +1,14 @@
 import React from 'react';
-import { AiOutlineLoading } from 'react-icons/ai';
 
-import './styles.css';
+import { ReactComponent as Loading } from '../../assets/loading.svg';
+import Container from './styles';
 
 function loadingIcon() {
-  return <AiOutlineLoading className="rotate-loading" size={20} />;
+  return (
+    <Container>
+      <Loading />
+    </Container>
+  );
 }
 
 export default loadingIcon;

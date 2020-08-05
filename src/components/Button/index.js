@@ -6,7 +6,7 @@ import ButtonContainer from './styles';
 function Button({ handleSearch }) {
   return (
     <ButtonContainer type="button" onClick={handleSearch}>
-      <FiSearch />
+      <FiSearch size={16} />
     </ButtonContainer>
   );
 }

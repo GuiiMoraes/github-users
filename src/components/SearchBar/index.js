@@ -1,14 +1,23 @@
 import React from 'react';
 
-import './styles.css';
+import Button from '../Button';
+import Container from './styles';
 
-function SearchBar({ user, handleChangeUser }) {
+function SearchBar({ user, handleChangeUser, handleSearch }) {
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') handleSearch();
+  };
+
   return (
-    <input
-      type="text"
-      onChange={e => handleChangeUser(e.target.value)}
-      value={user}
-    />
+    <Container>
+      <input
+        type="text"
+        onChange={e => handleChangeUser(e.target.value)}
+        onKeyPress={handleKeyDown}
+        value={user}
+      />
+      <Button handleSearch={handleSearch} />
+    </Container>
   );
 }
 
