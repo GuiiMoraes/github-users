@@ -4,7 +4,7 @@ import Container from './styles';
 
 function Header() {
   return (
-    <Container>
+    <Container data-cy="header">
       <h1>GitHub users</h1>
     </Container>
   );

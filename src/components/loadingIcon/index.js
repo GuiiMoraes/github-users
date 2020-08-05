@@ -5,7 +5,7 @@ import Container from './styles';
 
 function loadingIcon() {
   return (
-    <Container>
+    <Container data-cy="loading-icon">
       <Loading />
     </Container>
   );

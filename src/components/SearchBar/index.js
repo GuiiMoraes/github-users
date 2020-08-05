@@ -48,7 +48,7 @@ function SearchBar() {
   };
 
   return (
-    <Container>
+    <Container data-cy="search-bar">
       <input
         type="text"
         onChange={handleChangeTextInput}
