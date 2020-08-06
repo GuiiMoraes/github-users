@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import background from '../assets/background.svg';
+import background from '../../assets/background.svg';
 
 const opacityAnimation = keyframes`
   from {

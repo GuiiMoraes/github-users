@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FiAlertCircle, FiTrash2 } from 'react-icons/fi';
 
+import { UserContext } from '../../context/users';
+import { LoadingContext } from '../../pages/Dashboard/context/loading';
 import Loading from '../loadingIcon';
 import { Container, Card } from './styles';
 
-class Content extends React.Component {
+class ContentClass extends React.Component {
   render() {
     const { loading, usersData, removeUser } = this.props;
 
@@ -70,6 +72,19 @@ class Content extends React.Component {
       </Container>
     );
   }
+}
+
+function Content() {
+  const { loadingState } = useContext(LoadingContext);
+  const { usersData, removeUser } = useContext(UserContext);
+
+  return (
+    <ContentClass
+      loading={loadingState}
+      usersData={usersData}
+      removeUser={removeUser}
+    />
+  );
 }
 
 export default Content;
