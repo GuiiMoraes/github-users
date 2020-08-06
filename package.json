@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "cy": "cypress run",
+    "cy": "cypress run --quiet",
     "cy:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
