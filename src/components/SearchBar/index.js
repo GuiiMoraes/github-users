@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import { UserContext } from '../../context/users';
-import { LoadingContext } from '../../pages/context/loading';
+import { LoadingContext } from '../../pages/Dashboard/context/loading';
 import { getUsers } from '../../services/api.services';
 import Button from '../Button';
 import Container from './styles';

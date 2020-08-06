@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { UserProvider } from './context/users';
-import { LoadingProvider } from './pages/context/loading';
 import Dashboard from './pages/Dashboard';
+import { LoadingProvider } from './pages/Dashboard/context/loading';
 import GlobalStyles from './styles/global';
 
 function App() {
